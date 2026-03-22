@@ -37,7 +37,7 @@ export const ToDo = () => {
   }
   console.log(tasks);
   return (
-    <div className="p-container">
+    <div>
       <h1>To Do App</h1>
       <div>
         <input
@@ -46,22 +46,20 @@ export const ToDo = () => {
           onChange={handleTask}
           placeholder="Write your task Here"
         />
-        <button className="add-btn btn" onClick={addTask}>
-          ADD
-        </button>
+        <button onClick={addTask}>ADD</button>
       </div>
-      <div className="tasks-container">
+      <div>
         {tasks.map((t, index) => (
           <div key={index}>
             {t}
-            <div className="icons">
-              <button className="delete-btn" onClick={() => deleteTask(index)}>
+            <div>
+              <button onClick={() => deleteTask(index)}>
                 <i className="fa-solid fa-trash"></i>
               </button>
-              <button onClick={() => moveToUp(index)} className="move-btn">
+              <button onClick={() => moveToUp(index)}>
                 <i className="fa-solid fa-circle-up"></i>
               </button>
-              <button onClick={() => moveToDown(index)} className="move-btn">
+              <button onClick={() => moveToDown(index)}>
                 <i className="fa-solid fa-circle-down"></i>
               </button>
             </div>
